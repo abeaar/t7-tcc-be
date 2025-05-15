@@ -1,0 +1,58 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJmYXR1ckBnbWFpbC5jb20iLCJpYXQiOjE3NDcyOTE1MTMsImV4cCI6MTc0NzI5MTU0M30.8kgBRA3nKMvk5mniZHBtJeKeOhv9Yw8xk8VzexvVQG4
+###
+
+GET http://localhost:5000/users
+
+###
+
+GET http://localhost:5000/users-auth
+Authorization: Bearer {{token}}
+
+###
+
+POST http://localhost:5000/register-user
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "abr",
+    "password": "testing",
+    "email": "abr@gmail.com",
+    "title": "test tittle",
+    "category": "null"
+}
+
+### 
+
+PUT http://localhost:5000/update-user/25
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "abraar jihaad",
+    "email": "abr@abr.com",
+}
+
+###
+
+DELETE http://localhost:5000/delete-user/5
+Authorization: Bearer {{token}}
+
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+   
+    "email": "abr@gmail.com",
+    "password": "testing"
+}
+
+###
+GET http://localhost:5000/token
+
+###
+
+DELETE http://localhost:5000/logout
