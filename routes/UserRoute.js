@@ -15,8 +15,8 @@ router.get("/token", refreshToken);
 router.post("/login", loginHandler);
 router.delete("/logout", logout);
 
-router.get("/users", verifyToken,getUsers);
-// router.get("/users-auth", verifyToken, getUsers);
+router.get("/users",getUsers);
+router.get("/users-auth", verifyToken, getUsers);
 router.get("/users:id", verifyToken, getUsers);
 router.post("/register-user", verifyToken, createUser);
 router.put("/update-user/:id", verifyToken, updateUser);
