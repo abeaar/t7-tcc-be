@@ -9,7 +9,7 @@ GET http://localhost:5000/users-auth
 Authorization: Bearer {{token}}
 
 ###
-
+gs://kelompok-tcc-e07/tugas_tcc_abraar/.env
 POST http://localhost:5000/register-user
 Authorization: Bearer {{token}}
 Content-Type: application/json
