@@ -5,10 +5,13 @@ import db from "../config/Database.js";
 
 //PERBARUI MODEL USER DENGAN MENAMBAHKAN PASSWORD DAN REFRESH TOKEN
 const User = db.define(
-  "users", // Nama Tabel
+  "user", // Nama Tabel
   {
+    name : Sequelize.STRING,
     email: Sequelize.STRING,
     password: Sequelize.STRING,
+    title: Sequelize.STRING,
+    category: Sequelize.STRING,
     refresh_token: Sequelize.TEXT
   },{
     freezeTableName : true,

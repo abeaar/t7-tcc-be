@@ -19,7 +19,7 @@ router.get("/users",getUsers);
 router.get("/users-auth", verifyToken, getUsers);
 router.get("/users:id", verifyToken, getUsers);
 router.post("/register-user", verifyToken, createUser);
-router.put("/update-user/:id", verifyToken, updateUser);
+router.put("/update-user/:id",verifyToken, updateUser);
 router.delete("/delete-user/:id", verifyToken, deleteUser);
 
 export default router; 

@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJhYnJAZ21haWwuY29tIiwiaWF0IjoxNzQ3NzIzNzY4LCJleHAiOjE3NDc3MjM3OTh9.BWtYhjkZOYI_ULx-HCeVkPt-rixC4AcNByDbi8zzzLw
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFicmFhciBqaWhhYWQiLCJlbWFpbCI6ImFickBhYnIuY29tIiwidGl0bGUiOiJDbG91ZCBjb21wdXRpbmciLCJjYXRlZ29yeSI6Ikp1cm5hbCIsImlhdCI6MTc0Nzc0NzY5NiwiZXhwIjoxNzQ3NzQ3NzI2fQ.95O6K3_XwofuQVCkMBJc7-FkCdRVj_mEuE-bxDcX7Eg
 ###
 
 GET http://localhost:5000/users
@@ -9,7 +9,6 @@ GET http://localhost:5000/users-auth
 Authorization: Bearer {{token}}
 
 ###
-gs://kelompok-tcc-e07/tugas_tcc_abraar/.env
 POST http://localhost:5000/register-user
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -24,13 +23,14 @@ Content-Type: application/json
 
 ### 
 
-PUT http://localhost:5000/update-user/25
+PUT http://localhost:5000/update-user/2
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-    "name": "abraar jihaad",
-    "email": "abr@abr.com",
+    "name": "Faiz efendi",
+    "email": "fz@gmail.com",
+    "password": "12345"
 }
 
 ###
@@ -46,8 +46,8 @@ Content-Type: application/json
 
 {
    
-    "email": "abr@gmail.com",
-    "password": "testing"
+    "email": "abr@abr.com",
+    "password": "12345"
 }
 
 ###
