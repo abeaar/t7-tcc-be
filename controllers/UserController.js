@@ -168,7 +168,13 @@ async function logout(req,res){
           id:userId
       }
   });
-  res.clearCookie('refreshToken'); //ngehapus cookies yg tersimpan
+  res.clearCookie('refreshToken', {
+  httpOnly: false,
+  sameSite: 'none',
+  secure: false, // true jika di https
+  path: '/',     // tambahkan path jika perlu
+}
+); //ngehapus cookies yg tersimpan
   return res.sendStatus(200);
 }
 export { getUsers, getUserById, createUser, updateUser, deleteUser,loginHandler, logout};
