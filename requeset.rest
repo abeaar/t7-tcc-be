@@ -56,3 +56,23 @@ GET http://localhost:5000/token
 ###
 
 DELETE http://localhost:5000/logout
+
+###
+DELETE https://t7-tcc-be-713031961242.asia-southeast2.run.app/logout
+
+###
+
+GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/users
+###
+GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/token
+###
+GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/users:2
+
+###
+POST https://t7-tcc-be-713031961242.asia-southeast2.run.app/login
+Content-Type: application/json
+
+{  
+    "email": "abr@abr.com",
+    "password": "12345"
+}

@@ -96,7 +96,7 @@ async function loginHandler(req, res){
               email: email
           }
       });
-
+      
       if(user){
         //Data User itu nanti bakalan dipake buat ngesign token kan
         // data user dari sequelize itu harus diubah dulu ke bentuk object
