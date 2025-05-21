@@ -1,4 +1,4 @@
-import User from "../models/UserModel.js";
+import Users from "../models/UserModel.js";
 import jwt from "jsonwebtoken";
 
 export const refreshToken = async(req, res)=>{
@@ -7,7 +7,7 @@ export const refreshToken = async(req, res)=>{
         console.log({refreshToken})
         if(!refreshToken) return res.sendStatus(401);
         console.log("sudah lewat 401 di authcontroller")
-        const user = await User.findOne({
+        const user = await Users.findOne({
             where:{
                 refresh_token:refreshToken
             }

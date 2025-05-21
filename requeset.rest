@@ -1,43 +1,31 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFicmFhciBqaWhhYWQiLCJlbWFpbCI6ImFickBhYnIuY29tIiwidGl0bGUiOiJDbG91ZCBjb21wdXRpbmciLCJjYXRlZ29yeSI6Ikp1cm5hbCIsImlhdCI6MTc0Nzc0NzY5NiwiZXhwIjoxNzQ3NzQ3NzI2fQ.95O6K3_XwofuQVCkMBJc7-FkCdRVj_mEuE-bxDcX7Eg
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhYnJAYWJyLmNvbSIsImlhdCI6MTc0NzgzOTMyMCwiZXhwIjoxNzQ3ODM5MzUwfQ.EKRWGh42ry79a_FdhQjNul1Yk_Vm0ceoFNFp1FMlNrU
+GET http://localhost:5000/notes
+
+###
+GET http://localhost:5000/token
+###
+
+DELETE http://localhost:5000/logout
+###
+
+
+GET http://localhost:5000/notes-auth
+Authorization: Bearer {{token}}
+
+
 ###
 
 GET http://localhost:5000/users
 
 ###
 
-GET http://localhost:5000/users-auth
-Authorization: Bearer {{token}}
-
-###
-POST http://localhost:5000/register-user
-Authorization: Bearer {{token}}
+POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name": "abr",
-    "password": "testing",
-    "email": "abr@gmail.com",
-    "title": "test tittle",
-    "category": "null"
-}
-
-### 
-
-PUT http://localhost:5000/update-user/2
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-{
-    "name": "Faiz efendi",
-    "email": "fz@gmail.com",
+    "email": "fzz@fzz.com",
     "password": "12345"
 }
-
-###
-
-DELETE http://localhost:5000/delete-user/5
-Authorization: Bearer {{token}}
-
 
 ###
 
@@ -49,17 +37,53 @@ Content-Type: application/json
     "email": "abr@abr.com",
     "password": "12345"
 }
+###
+
+GET http://localhost:5000/notes-auth
+Authorization: Bearer {{token}}
+
+###
+POST http://localhost:5000/notes
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "wle wle cloud gimang",
+    "email": "rubychaannn",
+    "title": "hayyyyy",
+    "category": "nanigasukii"
+}
+
+### 
+
+PUT http://localhost:5000/notes/13
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "Faiz efendi cloud",
+    "email": "fz@gmail.com",
+    "title": "buku kematian",
+    "category": "nanigasukii"
+}
+
+###
+
+DELETE http://localhost:5000/notes/13
+Authorization: Bearer {{token}}
+
+
 
 ###
 GET http://localhost:5000/token
 
-###
-
-DELETE http://localhost:5000/logout
 
 ###
 DELETE https://t7-tcc-be-713031961242.asia-southeast2.run.app/logout
 
+###
+
+GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/notes
 ###
 
 GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/users

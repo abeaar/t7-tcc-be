@@ -4,18 +4,18 @@ import db from "../config/Database.js";
 // Membuat tabel "user"
 
 //PERBARUI MODEL USER DENGAN MENAMBAHKAN PASSWORD DAN REFRESH TOKEN
-const Users = db.define(
-  "users", // Nama Tabel
+const Notes = db.define(
+  "notes", // Nama Tabel
   {
+    name : Sequelize.STRING,
     email: Sequelize.STRING,
-    password: Sequelize.STRING,
-    refresh_token: Sequelize.TEXT
+    title: Sequelize.STRING,
+    category: Sequelize.STRING,
   },{
     freezeTableName : true,
-    timestamps: false,
 }
 );
 
 db.sync().then(() => console.log("Database synced"));
 
-export default Users;
+export default Notes;
