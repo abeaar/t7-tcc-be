@@ -1,5 +1,8 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhYnJAYWJyLmNvbSIsImlhdCI6MTc0NzgzOTMyMCwiZXhwIjoxNzQ3ODM5MzUwfQ.EKRWGh42ry79a_FdhQjNul1Yk_Vm0ceoFNFp1FMlNrU
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFicmFhciBqaWhhYWQiLCJlbWFpbCI6ImFickBhYnIuY29tIiwidGl0bGUiOiJDbG91ZCBjb21wdXRpbmciLCJjYXRlZ29yeSI6Ikp1cm5hbCIsImlhdCI6MTc0NzgwNzg4MywiZXhwIjoxNzQ3ODA3OTEzfQ.qMBNUJ6RpJ5v-kUJCKi8Y0HgJt5Nk5FyFNmeY5UwYb4
+
+###
 GET http://localhost:5000/notes
+Authorization: Bearer {{token}}
 
 ###
 GET http://localhost:5000/token

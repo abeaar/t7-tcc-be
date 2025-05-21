@@ -59,7 +59,7 @@ async function loginHandler(req, res){
           });
           res.cookie('refreshToken', refreshToken,{
             httpOnly : true, //ngatur cross-site scripting, untuk penggunaan asli aktifkan karena bisa nyegah serangan fetch data dari website "document.cookies"
-            sameSite : 'none',  //ini ngatur domain yg request misal kalo strict cuman bisa akseske link dari dan menuju domain yg sama, lax itu bisa dari domain lain tapi cuman bisa get
+            sameSite : 'lax',  //ini ngatur domain yg request misal kalo strict cuman bisa akseske link dari dan menuju domain yg sama, lax itu bisa dari domain lain tapi cuman bisa get
             maxAge  : 24*60*60*1000,
             secure: false, //ini ngirim cookies cuman bisa dari https, kenapa? nyegah skema MITM di jaringan publik, tapi pas development di false in aja
           });
@@ -92,31 +92,32 @@ async function loginHandler(req, res){
 
 
 async function logout(req, res) {
-  const refreshToken = req.cookies.refreshToken; //mgecek refresh token sama gak sama di database
-  if(!refreshToken)  
-    return res.sendStatus(204).json({ 
-      message: "refresh token gagal diambil dari cookie" 
+   try {
+    const refreshToken = req.cookies.refreshToken; // Sesuaikan nama cookie
+    if (!refreshToken) return res.sendStatus(204); // No Content, berarti user sudah logout
+
+    // User Validation
+    const data = await Users.findOne({
+      where: { refresh_token: refreshToken },
     });
+    if (!data) return res.status(204).json("User Tidak Ditemukan");
 
-  const user = await Users.findOne({
-    where: {
-      refresh_token: refreshToken
-    }
-  });
+    // Mengupdate refresh token menjadi null
+    await Users.update({ refresh_token: null }, { where: { id: data.id } });
 
-  if(!user) 
-    return res.sendStatus(204).json({ 
-      message: "refresh tokennya gaada di user" 
+    // Menghapus refresh cookie
+    res.clearCookie("refreshToken"); // Sesuaikan nama cookie
+
+    // Response
+    return res.status(200).json({
+      message: "Logout Berhasil",
     });
-
-  const userId = user.id;
-  await Users.update({refresh_token:null},{
-    where:{
-      id:userId
-    }
-  });
-  res.clearCookie('refreshToken'); //ngehapus cookies yg tersimpan
-  return res.sendStatus(200);
+  } catch (error) {
+    res.status(500).json({
+      message: "Terjadi Kesalahan",
+      error: error.message,
+    });
+  }
 }
 
 
