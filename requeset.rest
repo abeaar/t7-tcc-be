@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhYnJAYWJyLmNvbSIsImlhdCI6MTc0Nzk2OTMxNCwiZXhwIjoxNzQ3OTY5Mzc0fQ.Bi91uPP3Vb6UuFDnm4OqnmqK9FK0sDNmZoaA0wFQ6fw
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhYnJAYWJyLmNvbSIsImlhdCI6MTc0Nzk3NDEyOCwiZXhwIjoxNzQ3OTc0MTg4fQ.tBiGxnkzlfIaaUh4qcF4yzLaLBB7F1zxMaxTNp9XoUc
 
 ###
 GET http://localhost:5000/notes
@@ -90,7 +90,8 @@ GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/notes
 Authorization: Bearer {{token}}
 ###
 
-GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/users
+GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/notes/2
+Authorization: Bearer {{token}}
 ###
 GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/token
 ###
