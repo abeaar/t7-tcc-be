@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFicmFhciBqaWhhYWQiLCJlbWFpbCI6ImFickBhYnIuY29tIiwidGl0bGUiOiJDbG91ZCBjb21wdXRpbmciLCJjYXRlZ29yeSI6Ikp1cm5hbCIsImlhdCI6MTc0NzgwNzg4MywiZXhwIjoxNzQ3ODA3OTEzfQ.qMBNUJ6RpJ5v-kUJCKi8Y0HgJt5Nk5FyFNmeY5UwYb4
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhYnJAYWJyLmNvbSIsImlhdCI6MTc0Nzk2OTMxNCwiZXhwIjoxNzQ3OTY5Mzc0fQ.Bi91uPP3Vb6UuFDnm4OqnmqK9FK0sDNmZoaA0wFQ6fw
 
 ###
 GET http://localhost:5000/notes
@@ -46,7 +46,7 @@ GET http://localhost:5000/notes-auth
 Authorization: Bearer {{token}}
 
 ###
-POST http://localhost:5000/notes
+POST https://t7-tcc-be-713031961242.asia-southeast2.run.app/notes
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -87,6 +87,7 @@ DELETE https://t7-tcc-be-713031961242.asia-southeast2.run.app/logout
 ###
 
 GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/notes
+Authorization: Bearer {{token}}
 ###
 
 GET https://t7-tcc-be-713031961242.asia-southeast2.run.app/users

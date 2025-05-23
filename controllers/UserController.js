@@ -47,10 +47,10 @@ async function loginHandler(req, res){
         const isPasswordCorrect = await bcrypt.compare(password, user.password);
         if(isPasswordCorrect) {
           const accessToken = jwt.sign(safeUserData, process.env.ACCESS_TOKEN_SECRET, {
-            expiresIn : '60s' 
+            expiresIn : '5m' 
           });
           const refreshToken = jwt.sign(safeUserData, process.env.REFRESH_TOKEN_SECRET, {
-            expiresIn : '300s' 
+            expiresIn : '5m' 
           });
           await Users.update({ refresh_token: refreshToken }, {
             where:{
